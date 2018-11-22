@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<title>晨光开学季</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="//wechatfe.github.io/vconsole/lib/vconsole.min.js?v=2.5.2"></script>
+		<!-- Link Swiper's CSS -->
+		<link rel="stylesheet" href="dist/css/swiper.min.css">
+
+		<!-- Demo styles -->
+		<style>
+			html,
+			body {
+				position: relative;
+				height: 100%;
+			}
+
+			body {
+				background: #eee;
+				font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+				font-size: 14px;
+				color: #000;
+				margin: 0;
+				padding: 0;
+			}
+
+			.swiper-container {
+				width: 100%;
+				height: 100%;
+			}
+
+			.swiper-slide {
+				text-align: center;
+				font-size: 18px;
+				background: #fff;
+				/* Center slide text vertically */
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img id="switch" src="img/2/play.png" style="position:fixed; display:block; width:5%; top:5%; right:3%; z-index:1000">
+		<!-- Swiper -->
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide swiper-no-swiping" style="z-index:1999"><iframe style="height:100%;width:100%" src="night.html" frameborder="0"></iframe></div>
+				<div class="swiper-slide">
+					<div id="changeID" style="z-index:999; width:50px; height:50px; display:block; position:absolute; top:-20px; left:45%;background-image:url(img/2/changebg.png); background-size:cover; overflow:hidden"><img style="width:80%; height:80%; margin:auto; display:block; margin-top:5px;" src="img/2/change.png"></div><iframe style="height:100%;width:100%" src="day.html" frameborder="0"></iframe></div>
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination" style="display:none"></div>
+		</div>
+
+		<!-- Swiper JS -->
+		<script src="dist/js/swiper.min.js"></script>
+
+		<!-- Initialize Swiper -->
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+				//pagination: '.swiper-pagination',
+				initialSlide: 1,
+				// paginationClickable: true,
+				direction: 'vertical'
+			});
+		</script>
+		<audio id="bgmmusic" src="src/1/bgm.mp3" loop="loop"></audio>
+	</body>
+
+</html>
+
+<script>
+	$(function() {
+		var music = document.getElementById("bgmmusic");
+		music.play();
+
+		$("#switch").click(function() {
+			var music = document.getElementById("bgmmusic");
+			if (music.paused) {
+				music.play();
+				$("#switch").attr("src", "img/2/play.png");
+			} else {
+				music.pause();
+				$("#switch").attr("src", "img/2/pause.png");
+			}
+		})
+	})
+</script>

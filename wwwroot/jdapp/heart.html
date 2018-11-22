@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>京东内衣节</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset='utf8'>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<script src="plugin/jquery.min.js"></script>
+<style type="text/css">
+body {
+    background-image: url('img/bg3.jpg');
+    margin: 0px;
+    font-size: 70%;
+    background-size: 100%;
+}
+
+.rule {
+    color: black;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 3%;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.close {
+    width: 7%;
+    position: absolute;
+    top: 3%;
+    left: 88%;
+}
+
+.circle {
+    width: 100%;
+    /*margin-top: 24%;*/
+}
+
+.mado {
+    width: 60%;
+    margin-left: 20%;
+}
+
+.rules {
+    background-image: url('img/bg.jpg');
+    position: absolute;
+    display: none;
+    z-index: 2
+}
+
+.rules img {
+    margin-top: 30%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.rclose {
+    display: inline-block;
+    width: 11%;
+    height: 7%;
+    position: absolute;
+    left: 84%;
+    top: 18%;
+}
+.heart-shape{
+    position: relative;
+    width: 15px;
+    height: 15px;
+    left: 20px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: rgb(249, 107, 184);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-animation-name: heart;
+    -webkit-animation-duration: 2000ms;
+    -webkit-animation-iteration-count: infinite; /*无限循环*/
+    -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes heart {
+    0% { transform: rotate(70deg);top:30%;left:45%;}
+    50% { transform: rotate(30deg);top:25%;left:55%;}
+    100% { transform: rotate(45deg);top:20%;left:50%;}
+}
+.heart-shape:before,
+.heart-shape:after{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    content: '';
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    background-color: rgb(249, 107, 184);
+}
+.heart-shape:before{
+    bottombottom: 0px;
+    left: -10px;
+}
+.heart-shape:after{
+    top: -10px;
+    rightright: 0px;
+}
+</style>
+
+<body>
+    <div class='rules'>
+        <span class='rclose'></span>
+        <img src="img/guize.png">
+    </div>
+    <span class='rule'>活动规则</span>
+    <!-- <img class='close' src="img/close.png"> -->
+    <div class='circle'><img class="mado"></div>
+    <div class="heart-shape"></div>
+</body>
+<script type="text/javascript" src="//wechatfe.github.io/vconsole/lib/vconsole.min.js?v=2.5.2"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    sw = localStorage.getItem('sw');
+    if(!sw){
+        window.location.replace('index.html');
+    }
+    bmado = Array();
+    bmado[1] = 'img/b1.png';
+    bmado[2] = 'img/b2.png';
+    bmado[3] = 'img/b3.png';
+    bmado[4] = 'img/b4.png';
+    bmado[5] = 'img/b5.png';
+    console.log('local' + localStorage.getItem('mado'));
+    window.mado = localStorage.getItem('mado');
+    $('.mado').attr('src', bmado[window.mado]);
+    $('.rules').width($(window).width());
+    $('.rules').height($(window).height());
+    $('.rule').click(function() {
+        $('.rules').fadeIn(500);
+    });
+    $('.rclose').click(function() {
+        $('.rules').fadeOut(500);
+    });
+    // setTimeout(function() {
+    //     $.ajax({
+    //         url: 'https://h5.m.jd.com/h5api.new?functionid=babelActivityLuckDraw&body={"activityId":"3DAhHafNYuCBBrJfRmhZUnmJFumv","pageId":"3","moduleId":"uq1JdE1kRgcjHyvMRd149fmyKN2"} &client=wh5&clientVersion=1.0.0&callback=jsonp1',
+    //         type: 'GET',
+    //         dataType: 'JSONP',
+    //         jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+    //         jsonpCallback:"jsonp1",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
+    //     })
+    //     .done(function(res) {
+    //         // console.log(res);
+    //         if(res.code==3){//未登录
+    //             window.location.replace("https://passport.m.jd.com/user/login.action?returnurl="+window.location);
+    //         }else if(res.code==0&&res.subCode==0){//中奖
+    //             if(res.couponValue==20){
+    //                 window.location.replace('coupon_20.html');
+    //             }
+    //             if(res.couponValue==100){
+    //                 window.location.replace('coupon_100.html');
+    //             }
+    //         }else if(res.code==0&&res.subCode==1){//未中奖
+    //             window.location.replace('share.html');
+    //         }else{
+    //             window.location.replace('error.html?code='+res.code+'&subCode='+res.subCode);
+    //         }
+    //     })
+    //     .fail(function() {
+    //         window.location.replace('netbug.html');
+    //     })
+    //     .always(function() {
+    //         console.log("complete");
+    //     });
+
+    // }, 2000);
+})
+</script>
+
+</html>

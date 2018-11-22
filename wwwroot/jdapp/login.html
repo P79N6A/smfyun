@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>京东内衣节</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset='utf8'>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<script src="plugin/jquery.min.js"></script>
+<style type="text/css">
+body {
+    background-image: url('img/bg.jpg');
+    margin: 0px;
+    font-size: 70%;
+}
+
+.rule {
+    color: black;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 3%;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.close {
+    width: 7%;
+    position: absolute;
+    top: 3%;
+    left: 88%;
+}
+
+.login {
+    width: 80%;
+    margin-left: 10%;
+    background: white;
+    text-align: center;
+    border: 2px solid #e774a1;
+    padding: 30px 0px;
+    border-radius: 20px;
+    margin-top: 30%;
+    color: #6d6c6c;
+}
+
+.login div {
+    font-size: 1.5em;
+    line-height: 150px;
+}
+
+.login img {
+    width: 50%;
+}
+
+.rclose {
+    display: inline-block;
+    width: 11%;
+    height: 7%;
+    position: absolute;
+    left: 84%;
+    top: 18%;
+}
+
+.rules {
+    background-image: url('img/bg.jpg');
+    position: absolute;
+    display: none;
+    z-index: 2
+}
+
+.rules img {
+    margin-top: 30%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.rclose {
+    display: inline-block;
+    width: 11%;
+    height: 7%;
+    position: absolute;
+    left: 84%;
+    top: 18%;
+}
+</style>
+
+<body>
+    <div class='rules'>
+        <span class='rclose'></span>
+        <img src="img/guize.png">
+    </div>
+    <span class='rule'>活动规则</span>
+    <!-- <img class='close' src="img/close.png"> -->
+    <div class='login'>
+        <div>离奖品只有一个登陆的距离</div>
+        <img src="img/login.png" class='btn'>
+    </div>
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+    sw = localStorage.getItem('sw');
+    if(!sw){
+        window.location.replace('index.html');
+    }
+});
+$('.rules').width($(window).width());
+$('.rules').height($(window).height());
+$('.rule').click(function() {
+    $('.rules').fadeIn(500);
+});
+$('.rclose').click(function() {
+    $('.rules').fadeOut(500);
+});
+$('.btn').click(function() {
+    window.location.href = "https://passport.m.jd.com/user/login.action?returnurl="+window.location;
+})
+</script>
+
+</html>

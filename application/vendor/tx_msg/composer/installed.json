@@ -1,0 +1,40 @@
+[
+    {
+        "name": "qcloudsms/qcloudsms_php",
+        "version": "v0.1.2",
+        "version_normalized": "0.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/qcloudsms/qcloudsms_php.git",
+            "reference": "8ee474a6836c015d412eabd1b082bae926f5ee02"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/qcloudsms/qcloudsms_php/8ee474a6836c015d412eabd1b082bae926f5ee02.zip",
+            "reference": "8ee474a6836c015d412eabd1b082bae926f5ee02",
+            "shasum": ""
+        },
+        "require-dev": {
+            "sami/sami": "dev-master"
+        },
+        "time": "2018-02-23T06:31:39+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Qcloud\\Sms\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "qcloud sms php sdk",
+        "keywords": [
+            "php",
+            "qcloud",
+            "sdk",
+            "sms"
+        ]
+    }
+]

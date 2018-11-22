@@ -1,0 +1,21 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "code": 200,
+      "msg": "调用成功。",
+      "results": [
+        {
+          "label": "porn",
+          "rate": 100.0,
+          "scene": "porn",
+          "suggestion": "block"
+        }
+      ],
+      "taskId": "e4c72f02-8120-41b6-a7ee-66684a6936f8-1492678445660",
+      "url": "http://rifleman-share.oss-cn-hangzhou.aliyuncs.com/test/%E8%89%B2%E6%83%85/35f358169d812db6e26341d447ef1950.jpg"
+    }
+  ],
+  "msg": "OK",
+  "requestId": "25E44B60-9D82-4848-AA59-7DFAFD653336"
+}

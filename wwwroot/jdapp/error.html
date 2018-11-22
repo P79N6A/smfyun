@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>京东内衣节</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset='utf8'>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<script src="plugin/jquery.min.js"></script>
+<style type="text/css">
+body {
+    background-image: url('img/bg.jpg');
+    margin: 0px;
+    font-size: 70%;
+}
+
+.rule {
+    color: black;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 3%;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.close {
+    width: 7%;
+    position: absolute;
+    top: 3%;
+    left: 88%;
+}
+
+.tip {
+    text-align: center;
+    margin-top: 45%;
+}
+
+.tips {
+    color: #6d6c6c;
+    font-size: 1.6em;
+}
+
+.go {
+    display: inline-block;
+    width: 40%;
+    margin: 20% 1% 0px 1%;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.float {
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.share {
+    border-bottom: 1px solid #1b1b1b;
+    color: #6d6c6c;
+}
+
+.rules {
+    background-image: url('img/bg.jpg');
+    position: absolute;
+    display: none;
+    z-index: 2
+}
+
+.rules img {
+    margin-top: 30%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.rclose {
+    display: inline-block;
+    width: 11%;
+    height: 7%;
+    position: absolute;
+    left: 84%;
+    top: 18%;
+}
+</style>
+
+<body>
+    <div class='rules'>
+        <span class='rclose'></span>
+        <img src="img/guize.png">
+    </div>
+    <span class='rule'>活动规则</span>
+    <!-- <img class='close' src="img/close.png"> -->
+    <div class='tip'>
+        <div class='tips'>异常</div>
+        <div class='tips2'></div>
+    </div>
+    <div class="circle">
+        <img class='go again' src="img/again.png">
+        <img class='go goto' src="img/goto.png">
+    </div>
+</body>
+<script type="text/javascript" src="https://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=2.5.2"></script>
+<script type="text/javascript" src="plugin/jdShare.js"></script>
+<script type="text/javascript">
+getUrlParam = function(name){
+  var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+  var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+  if (r!=null) return unescape(r[2]); return null; //返回参数值
+}
+$(document).ready(function() {
+    sw = localStorage.getItem('sw');
+    if(!sw){
+        window.location.replace('index.html');
+    }
+});
+$('.tips').text('code：'+getUrlParam('code')+'；subCode：'+getUrlParam('subCode'));
+$('.rules').width($(window).width());
+$('.rules').height($(window).height());
+$('.rule').click(function() {
+    $('.rules').fadeIn(500);
+});
+$('.rclose').click(function() {
+    $('.rules').fadeOut(500);
+});
+$('.again').click(function(){
+    window.location.replace('index.html');
+})
+$('.goto').click(function(){
+    window.location.replace('https://pro.m.jd.com/mall/active/3edgRVUf9EaomKEtq5x7WW1SYbRg/index.html');
+})
+</script>
+
+</html>

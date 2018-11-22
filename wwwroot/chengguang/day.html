@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width" name="viewport" />
+		<meta content=”telephone=no” name=”format-detection” />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%;
+			}
+			/*地图布局*/
+			#boxGif {
+				position: absolute;
+				top: 20px;
+				left: 450px;
+			}
+
+			#container {
+				position: absolute;
+			}
+
+			#backGroudPic {
+				height: 100%;
+			}
+
+			#yujianxinqi {
+				position: absolute;
+				top: 170px;
+				left: 250px;
+			}
+
+			#yaoganGif {
+				position: absolute;
+				top: 12px;
+				left: 803px;
+			}
+
+			#schoolGif {
+				position: absolute;
+				top: 190px;
+				left: 770px;
+			}
+
+			#xiuzhengdaiGif {
+				position: absolute;
+				top: 7px;
+				left: 1354px;
+			}
+			#tanhaoPic2{
+				position: absolute;
+				top: 170px;
+				left: 950px;
+			}
+
+			#feitingGif {
+				position: absolute;
+				top: 0px;
+				left: 1640px;
+			}
+
+			#shubenGif {
+				position: absolute;
+				top: 250px;
+				left: 1520px;
+			}
+
+			#jianzhuGif {
+				position: absolute;
+				top: 293px;
+				left: 1780px;
+			}
+
+			#faxianhaowu {
+				position: absolute;
+				top: 360px;
+				left: 1980px;
+			}
+
+			#tanhaoPic {
+				position: absolute;
+				top: 0px;
+				left: 1830px;
+			}
+			/*关于点击事件的布局(弹出框布局)*/
+
+			.modal-content {
+				background-color: transparent;
+				border-style: none;
+			}
+
+			#myVedio {
+				position: absolute;
+				background-color: transparent;
+				top: 30px;
+				left: 0px;
+				/*transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				/* Internet Explorer */
+				/*-moz-transform: rotate(90deg);*/
+				/* Firefox */
+				/*-webkit-transform: rotate(90deg);*/
+				/* Safari 和 Chrome */
+				/*-o-transform: rotate(90deg);*/
+				/* Opera */
+				*/ opacity: 1;
+			}
+
+			#poster {
+				position: absolute;
+				background-color: transparent;
+				opacity: 1;
+			}
+
+			#saveTips {
+				position: absolute;
+				left: 215px;
+				top: 270px;
+				background-color: transparent;
+				opacity: 1;
+			}
+
+			#finalPage {
+				position: absolute;
+				top: 300px;
+				left: 220px;
+				background-color: transparent;
+				opacity: 1;
+			}
+
+			#closeBtn {
+				position: absolute;
+				left: 500px;
+				top: 25px;
+				background-color: transparent;
+				opacity: 1;
+			}
+
+			#videoCloseBtn {
+				position: absolute;
+				left: 455px;
+				top: 20px;
+				background-color: transparent;
+				opacity: 1;
+			}
+
+			#videoPlayBtn {
+				position: absolute;
+				top: 200px;
+				left: 200px;
+				background-color: transparent;
+				opacity: 1;
+			}
+
+			#videoCloseBtn2 {
+				position: absolute;
+				left: 455px;
+				top: 20px;
+				background-color: transparent;
+				opacity: 1;
+			}
+
+			#videoPlayBtn2 {
+				position: absolute;
+				top: 200px;
+				left: 200px;
+				background-color: transparent;
+				opacity: 1;
+			}
+		</style>
+		<title>晨光开学季</title>
+	</head>
+
+	<body>
+		<script>
+			parent.document.getElementById("changeID").hidden=true;
+		</script>
+		<!--引入JS-->
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/popper.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+		<div id="container" style="overflow:auto">
+			<div id="backGroudPic">
+				<img src="img/2/bg.png" height="100%">
+			</div>
+
+			<div id="boxGif">
+				<a data-toggle="modal" data-target="#daybox" id="dayboxBtn"><img src="img/Gif/day铅笔盒.gif" alt="boxGif" /></a>
+
+			</div>
+
+			<div id="yujianxinqi">
+				<img src="img/Gif/yujianxinqi.png" />
+			</div>
+			<div id="yaoganGif">
+				<img src="img/Gif/day摇杆.gif" />
+			</div>
+			<div id="schoolGif">
+				<a data-toggle="modal" data-target="#dayschool" id="dayschoolBtn"><img src="img/Gif/day教学楼.gif" /></a>
+			</div>
+			<div id="xiuzhengdaiGif">
+				<img src="img/Gif/day修正带.gif" />
+			</div>
+			<div id="feitingGif">
+				<a data-toggle="modal" data-target="#dayairship" id="dayairshipBtn"><img src="img/Gif/day热气球.gif" /></a>
+
+			</div>
+			<div id="shubenGif">
+				<img src="img/Gif/day书架.gif" />
+			</div>
+			<div id="jianzhuGif">
+			<a data-toggle="modal" data-target="#daybuilding" id="daybuildingBtn"><img src="img/Gif/day礼堂.gif" /></a>
+			</div>
+			<div id="faxianhaowu">
+				<img src="img/Gif/faxianhaowu.png" />
+			</div>
+			<div id="tanhaoPic">
+				<img src="img/Gif/叹号@2x.png" />
+			</div>
+			<div id="tanhaoPic2">
+				<img src="img/Gif/叹号@2x.png" />
+			</div>
+		</div>
+
+		<!-- 按钮的音效 -->
+		<audio src="img/audio/热气球.mp3" id="dayairshipAudio"></audio>
+		<audio src="img/audio/热气球晚.mp3" id="nightairshipAudio"></audio>
+		<audio src="img/audio/教学楼.mp3" id="daybuildingAudio"></audio>
+		<audio src="img/audio/教学楼晚.mp3" id="nightbuildingAudio"></audio>
+		<audio src="img/audio/礼堂.mp3" id="dayschoolAudio"></audio>
+		<audio src="img/audio/礼堂晚.wav" id="nightshcoolAudio"></audio>
+		<audio src="img/audio/铅笔盒.mp3" id="dayboxAudio"></audio>
+		<audio src="img/audio/铅笔盒晚.mp3" id="nightboxAudio"></audio>
+
+		<script>
+			document.getElementById("dayairshipBtn").addEventListener("click", function() {
+				document.getElementById("dayairshipAudio").play();
+			});
+			document.getElementById("dayschoolBtn").addEventListener("click", function() {
+				document.getElementById("dayschoolAudio").play();
+			});
+			document.getElementById("dayboxBtn").addEventListener("click", function() {
+				document.getElementById("dayboxAudio").play();
+			});
+			document.getElementById("daybuildingBtn").addEventListener("click", function() {
+				document.getElementById("daybuildingAudio").play();
+			});
+			document.getElementById("nightairshipBtn").addEventListener("click", function() {
+				document.getElementById("nightairshipAudio").play();
+			});
+			document.getElementById("nightschoolBtn").addEventListener("click", function() {
+				document.getElementById("nightshcoolAudio").play();
+			});
+			document.getElementById("nightboxBtn").addEventListener("click", function() {
+				document.getElementById("nightboxAudio").play();
+			});
+			document.getElementById("nightbuilding").addEventListener("click", function() {
+				document.getElementById("nightbuildingAudio").play();
+			});
+		</script>
+		<!--点击事件-->
+		<!--白天飞艇-->
+		<div class="modal fade" id="dayairship" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+
+						<div id="poster">
+							<img src="img/DayandNight8/dayairship/book.png" alt="poster" height="320.4" width="613.2" />
+						</div>
+
+						<div id="saveTips">
+							<a href="finalPage.html">
+								<img src="img/DayandNight8/nightairship/save@2x.png" alt="saveTips" height="14" width="126" />
+							</a>
+						</div>
+
+						<div id="closeBtn">
+							<a data-dismiss="modal"> <img src="img/DayandNight8/nightairship/close@2x.png" alt="nightAirShip" width="29" height="29"></a>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!--白天学校-->
+		<div class="modal fade" id="dayschool" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+
+						<div id="poster">
+							<img src="img/DayandNight8/dayschool/clock.png" alt="poster" height="320.4" width="613.2" />
+						</div>
+
+						<div id="saveTips">
+							<a href="finalPage.html">
+								<img src="img/DayandNight8/nightairship/save@2x.png" alt="saveTips" height="14" width="126" />
+							</a>
+						</div>
+
+						<div id="closeBtn">
+							<a data-dismiss="modal"> <img src="img/DayandNight8/nightairship/close@2x.png" alt="nightAirShip" width="29" height="29"></a>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!--白天铅笔盒-->
+		<div class="modal fade" id="daybox" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+
+						<div id="myVedio">
+							<video id="videoSugan" width="474" height="262" poster="img/videoPic/videoPosterFix.png">
+ 	 						<source src="img/videoPic/youwo.mp4" type="video/mp4">
+						</div>
+
+
+						<!--<div id="finalPage">
+							<a href="finalPage.html">
+								<img src="img/DayandNight8/nightairship/Fill 1@2x.png" alt="finalPage" height="12" width="20" />
+							</a>
+
+						</div>-->
+
+						<div id="videoPlayBtn">
+							<img src="img/videoPic/playBtn.png" alt="videoPlayBtn" id="videoPlayBtnID" width="57" height="57" />
+
+						</div>
+
+						<div id="videoCloseBtn">
+							<a data-dismiss="modal"> <img src="img/DayandNight8/nightairship/close@2x.png" id="videoCloseBtnID" alt="nightAirShip" width="29" height="29"></a>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- 白天礼堂 -->
+		<div class="modal fade" id="daybuilding" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+
+						<div id="myVedio">
+							<video id="videoYouwo" width="474" height="262" poster="img/videoPic/videoPosterFix.png">
+ 	 						<source src="img/videoPic/sugan.mp4" type="video/mp4">
+						</div>
+
+
+						<!--<div id="finalPage">
+							<a href="finalPage.html">
+								<img src="img/DayandNight8/nightairship/Fill 1@2x.png" alt="finalPage" height="12" width="20" />
+							</a>
+
+						</div>-->
+
+						<div id="videoPlayBtn2">
+							<img src="img/videoPic/playBtn.png" alt="videoPlayBtn" id="videoPlayBtnID2" width="57" height="57" />
+
+						</div>
+
+						<div id="videoCloseBtn2">
+							<a data-dismiss="modal"> <img src="img/DayandNight8/nightairship/close@2x.png" id="videoCloseBtnID2" alt="nightAirShip" width="29" height="29"></a>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!--
+		自定义视频按钮的监听!
+        -->
+        <script>
+	document.getElementById("videoPlayBtnID").addEventListener("click", function(){
+    document.getElementById('videoSugan').play();
+    document.getElementById("videoPlayBtnID").hidden=true;
+    parent.document.getElementById("bgmmusic").pause();
+
+});
+
+	document.getElementById("videoCloseBtnID").addEventListener("click", function(){
+    document.getElementById('videoSugan').pause();
+    document.getElementById('videoSugan').currentTime = 0;
+    document.getElementById("videoPlayBtnID").hidden=false;
+    parent.document.getElementById("bgmmusic").play();
+});
+
+document.getElementById("videoPlayBtnID2").addEventListener("click", function(){
+    document.getElementById('videoYouwo').play();
+    document.getElementById("videoPlayBtnID2").hidden=true;
+    parent.document.getElementById("bgmmusic").pause();
+
+});
+
+	document.getElementById("videoCloseBtnID2").addEventListener("click", function(){
+    document.getElementById('videoYouwo').pause();
+    document.getElementById('videoYouwo').currentTime = 0;
+    document.getElementById("videoPlayBtnID2").hidden=false;
+    parent.document.getElementById("bgmmusic").play();
+});
+
+//点击出现切换
+
+document.getElementById("dayboxBtn").addEventListener("click", function(){
+parent.document.getElementById("changeID").hidden=false;
+
+});
+document.getElementById("dayschoolBtn").addEventListener("click", function(){
+parent.document.getElementById("changeID").hidden=false;
+
+});
+document.getElementById("dayairshipBtn").addEventListener("click", function(){
+parent.document.getElementById("changeID").hidden=false;
+});
+document.getElementById("daybuildingBtn").addEventListener("click", function(){
+    parent.document.getElementById("changeID").hidden=false;
+});
+
+
+</script>
+
+	</body>
+
+</html>

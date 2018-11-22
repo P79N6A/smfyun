@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>京东内衣节</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset='utf8'>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<script src="plugin/jquery.min.js"></script>
+<style type="text/css">
+body {
+    background-image: url('img/bg2.jpg');
+    margin: 0px;
+    font-size: 70%;
+    background-size: 100%;
+    display: none;
+}
+
+.rule {
+    color: black;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 3%;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.close {
+    width: 7%;
+    position: absolute;
+    top: 3%;
+    left: 88%;
+}
+
+.circle {
+    width: 100%;
+    /*margin-top: 17%;*/
+}
+
+.mado {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.sw {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.sw img {
+    width: 15%;
+    margin: 0px 2%;
+}
+
+.rules {
+    background-image: url('img/bg.jpg');
+    position: absolute;
+    display: none;
+    z-index: 2
+}
+
+.rules img {
+    margin-top: 30%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.rclose {
+    display: inline-block;
+    width: 11%;
+    height: 7%;
+    position: absolute;
+    left: 84%;
+    top: 18%;
+}
+</style>
+
+<body>
+    <div class='rules'>
+        <span class='rclose'></span>
+        <img src="img/guize.png">
+    </div>
+    <span class='rule'>活动规则</span>
+    <!-- <img class='close' src="img/close.png"> -->
+    <div class='circle'><img class="mado"></div>
+    <div class='sw'>
+        <img src="img/w1.png" class='csw' data-id='1'>
+        <img src="img/w2.png" class='csw' data-id='2'>
+        <img src="img/w3.png" class='csw' data-id='3'>
+        <img src="img/w4.png" class='csw' data-id='4'>
+        <img src="img/w5.png" class='csw' data-id='5'>
+    </div>
+</body>
+<script type="text/javascript">
+function check(m, s) {
+    if (m == 1 && s == 3) return true;
+    if (m == 2 && s == 1) return true;
+    if (m == 3 && s == 2) return true;
+    if (m == 4 && s == 4) return true;
+    if (m == 5 && s == 5) return true;
+}
+$(document).ready(function() {
+    mmado = Array();
+    smado = Array();
+    fmado = Array();
+    wmado = Array();
+    xmado = Array();
+    mmado[1] = 'img/m1.png';
+    mmado[2] = 'img/m2.png';
+    mmado[3] = 'img/m3.png';
+    mmado[4] = 'img/m4.png';
+    mmado[5] = 'img/m5.png';
+
+    smado[1] = 'img/s1.png';
+    smado[2] = 'img/s2.png';
+    smado[3] = 'img/s3.png';
+    smado[4] = 'img/s4.png';
+    smado[5] = 'img/s5.png';
+
+    xmado[1] = 'img/x1.png';
+    xmado[2] = 'img/x2.png';
+    xmado[3] = 'img/x3.png';
+    xmado[4] = 'img/x4.png';
+    xmado[5] = 'img/x5.png';
+
+    wmado[1] = 'img/w1.png';
+    wmado[2] = 'img/w2.png';
+    wmado[3] = 'img/w3.png';
+    wmado[4] = 'img/w4.png';
+    wmado[5] = 'img/w5.png';
+
+    fmado[1] = 'img/f1.png';
+    fmado[2] = 'img/f2.png';
+    fmado[3] = 'img/f3.png';
+    fmado[4] = 'img/f4.png';
+    fmado[5] = 'img/f5.png';
+
+    console.log('local' + localStorage.getItem('mado'));
+    window.mado = localStorage.getItem('mado');
+    setTimeout(function(){
+        $('body').fadeIn(500);
+    },500)
+    if(!window.mado){
+        window.location.replace('index.html');
+    }
+    $('.mado').attr('src', mmado[window.mado]);
+    $('.rules').width($(window).width());
+    $('.rules').height($(window).height());
+    $('.rule').click(function() {
+        $('.rules').fadeIn(500);
+    });
+    $('.rclose').click(function() {
+        $('.rules').fadeOut(500);
+    });
+})
+$('.csw').click(function() {
+    if (window.flag == 1) {
+        return;
+    }
+    for (var i = 0; i <= 4; i++) {
+        $('.csw').eq(i).attr('src', wmado[i + 1]);
+    };
+    $(this).attr('src', xmado[$(this).data('id')])
+    console.log($(this).data('id'));
+    if (check(window.mado, $(this).data('id')) == true) {
+        localStorage.setItem('sw', $(this).data('id'));
+        console.log(true)
+        window.flag = 1;
+        $('.mado').attr('src', smado[window.mado]);
+        setTimeout(function() {
+            window.location.replace('heart.html');
+        }, 2000);
+    } else {
+        console.log(false)
+        $('.mado').attr('src', fmado[window.mado]);
+    }
+})
+</script>
+
+</html>

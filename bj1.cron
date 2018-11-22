@@ -1,0 +1,85 @@
+MAILTO=""
+*/5 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/wdy_tag
+*/5 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/rwb_tag
+*/5 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/qwt_dkatag
+*/5 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/qwt_rwbtag
+*/10 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/wxp_cron
+0 0 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_yyx
+0 1 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_dka
+0 2 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_wdy
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=qwtdka/tplcheck
+0 3 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_kmi
+
+0 4 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_fxb
+
+0 5 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_dyb
+
+0 6 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_qfx
+0 8 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_rwb
+
+0 10 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_ytb
+
+0 11 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_yty
+
+0 12 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_wzb
+0 2 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_smfyun
+10 2 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_wsd
+15 2 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_dld
+20 2 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/qwt_smfyun
+0 4 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/oauthscript_yyb
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/cron
+30 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/cron1
+20 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/cron2
+*/10 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/qwt_hb_cron/hbb
+*/5 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/generate_cron
+*/5 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/qwt_dpm
+* * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/ywm_cron
+* * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/bnk
+*/5 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/qwt_hby_cron
+*/5 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/qwt_ywm_cron
+* * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/wdy_onezero
+* * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/qwt_wfbonezero
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/1
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/2
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/3
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/4
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/5
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/6
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/7
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/8
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/9
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/10
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/11
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/12
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/13
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/14
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/15
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/16
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/17
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/18
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/19
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/20
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/21
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/22
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/23
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/24
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/25
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/26
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/27
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/28
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/29
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/30
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/31
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/32
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/33
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/34
+0 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/dka_tplcheck/35
+* * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=yyb/qrcron
+* * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=yyb/info
+* * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=qwtyyb/qrcron
+* * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=qwtyyb/info
+*/5 * * * * /usr/bin/node /www/jfb.smfyun.com/application/shell/yyb_test.js
+*/5 * * * * /usr/bin/node /www/jfb.smfyun.com/application/shell/qwtyyb_test.js
+*/5 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/wait_refresh
+*/5 * * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/wsdqrcode/4
+0 10 * * * /usr/bin/php /www/jfb.smfyun.com/wwwroot/index.php --uri=cron/send_over_msg

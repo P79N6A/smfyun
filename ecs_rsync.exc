@@ -1,0 +1,11 @@
+logs
+tmp
+dev.smfyun.com
+hg.conf
+jfb.smfyun.com/application/cache
+smfyun.com/application/cache
+jfb.smfyun.com/GatewayWorker/Applications/YourApp/Events.php
+jfb.smfyun.com/GatewayWorker/Applications/YourApp/start_businessworker.php
+jfb.smfyun.com/GatewayWorker/Applications/YourApp/start_gateway.php
+jfb.smfyun.com/GatewayWorker/Applications/YourApp/start_register.php
+*.log

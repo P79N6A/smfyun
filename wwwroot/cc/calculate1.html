@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://game.163.com/2017/exodus/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>px换算DP</title>
+	<meta name="from" content="git:NIE/game-zt-m-20170926">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+</head>
+    <body>
+    <label for="width">长（px）</label>
+    <input id="width" type="number">
+    <br>
+    <label for="height">高（px）</label>
+    <input id="height" type="number">
+    <br>
+    <label for="size">尺寸（英寸）</label>
+    <input id="size" type="number">
+    <br>
+    <label for="targetwidth">px</label>
+    <input id="targetwidthpx" type="number">
+    <br>
+    <label for="targetwidth">dp</label>
+    <input id="targetwidthdp" type="number">
+    <br>
+    <!-- <button id="start">开始</button> -->
+    <div class="result" style="display:none">
+    <br>
+    <label>ppi：<span id="ppi"></span></label>
+    <br>
+    <!-- <label>比例：<span id="bili"></span></label> -->
+    </div>
+
+    </body>
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $('#targetwidthpx').change(function(event) {
+        /* Act on the event */
+        var a = $('#width').val();
+        var b = $('#height').val();
+        var c = a*a + b*b;
+        var g = $('#size').val();
+        //ppi
+        var d = Math.sqrt(c)/g;
+        //比例
+        var e = d/160;
+        var f = $('#targetwidthpx').val();
+        //DP
+        var h = e * f;
+        $('#targetwidthdp').val(h);
+        $('#ppi').text(d);
+        // $('#bili').text(e);
+        $('.result').show();
+    });
+    $('#targetwidthdp').change(function(event) {
+        /* Act on the event */
+        var a = $('#width').val();
+        var b = $('#height').val();
+        var c = a*a + b*b;
+        var g = $('#size').val();
+        //ppi
+        var d = Math.sqrt(c)/g;
+        //比例
+        var e = d/160;
+        var f = $('#targetwidthdp').val();
+        //DP =
+        var h = f/e;
+        $('#targetwidthpx').val(h);
+        $('#ppi').text(d);
+        // $('#bili').text(e);
+        $('.result').show();
+    });
+    </script>
+</html>

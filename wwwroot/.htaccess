@@ -1,0 +1,20 @@
+# Turn on URL rewriting
+RewriteEngine On
+
+# Installation directory
+# RewriteBase /
+
+RewriteCond %{REQUEST_URI} !=/s-status
+
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all other URLs to index.php/URL
+RewriteRule .* index.php/$0 [PT]
+
+php_value session.gc_maxlifetime 43200
+php_value session.save_handler "memcached"
+php_value session.save_path    "180.76.243.74"

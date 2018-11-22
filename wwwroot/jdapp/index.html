@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>京东内衣节</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset='utf8'>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<script src="plugin/jquery.min.js"></script>
+<script type="text/javascript" src="//wechatfe.github.io/vconsole/lib/vconsole.min.js?v=2.5.2"></script>
+<script type="text/javascript" src="plugin/iscroll-probe.js"></script>
+<style type="text/css">
+body {
+    background-image: url('img/bg.jpg');
+    margin: 0px;
+    font-size: 70%;
+}
+
+.rule {
+    color: black;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 3%;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.close {
+    width: 7%;
+    position: absolute;
+    top: 3%;
+    left: 88%;
+}
+
+.title {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 7%;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -ms-touch-action: none;
+}
+
+body,
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    font-size: 12px;
+    font-family: ubuntu, helvetica, arial;
+    overflow: hidden;
+    /* this is important to prevent the whole page to bounce */
+}
+
+#viewport {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#wrapper {
+    width: 50%;
+    height: 240px;
+    margin: 0 auto;
+}
+
+#scroller {
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 250%;
+    height: 240px;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+    /*background-color: #444;*/
+}
+
+.slide {
+    width: 20%;
+    height: 240px;
+    float: left;
+}
+
+.painting {
+    width: 80%;
+    height: 260px;
+    margin: 10px auto;
+    zoom: 0.8;
+}
+
+.giotto {
+    background-image: url('img/1.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.leonardo {
+    background-image: url('img/2.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.gaugin {
+    background-image: url('img/3.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.warhol {
+    background-image: url('img/4.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.warhol2 {
+    background-image: url('img/5.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.text {
+    width: 40%;
+    margin-left: 30%;
+}
+
+.btn {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+.mask {
+    background-image: url('img/loading.jpg');
+    position: absolute;
+    z-index: 100;
+    background-size: 100%;
+    text-align: center;
+    color: #e774a1;
+    font-size: 1.4em;
+    /* width: 100%;
+ height: 100%;*/
+}
+
+.rules {
+    background-image: url('img/bg.jpg');
+    position: absolute;
+    display: none;
+    z-index: 2
+}
+
+.rules img {
+    margin-top: 30%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.rclose {
+    display: inline-block;
+    width: 11%;
+    height: 7%;
+    position: absolute;
+    left: 84%;
+    top: 18%;
+}
+</style>
+
+<body>
+    <div class='rules'>
+        <span class='rclose'></span>
+        <img src="img/guize.png">
+    </div>
+    <div class='mask'>
+        0%
+    </div>
+    <span class='rule'>活动规则</span>
+    <!-- <img class='close' src="img/close.png"> -->
+    <img class='title' src='img/title.png'>
+    <div id="viewport">
+        <div id="wrapper">
+            <div id="scroller">
+                <div class="slide">
+                    <div class="painting giotto"></div>
+                </div>
+                <div class="slide">
+                    <div class="painting leonardo"></div>
+                </div>
+                <div class="slide">
+                    <div class="painting gaugin"></div>
+                </div>
+                <div class="slide">
+                    <div class="painting warhol"></div>
+                </div>
+                <div class="slide">
+                    <div class="painting warhol2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src='img/text.png' class='text'>
+    <img src='img/btn.png' class='btn'>
+</body>
+<script type="text/javascript">
+var myScroll;
+
+$(document).ready(function() {
+    $('.painting').eq(0).css({
+        'width': '100%',
+        'position': 'relative',
+        'bottom': '20px'
+    });
+    $('.rules').width($(window).width());
+    $('.rules').height($(window).height());
+    $('.rule').click(function() {
+        $('.rules').fadeIn(500);
+    });
+    $('.rclose').click(function() {
+        $('.rules').fadeOut(500);
+    });
+    $('.mask').width($(window).width());
+    $('.mask').height($(window).height());
+    $('.mask').css({
+        'line-height': $(window).height() + 'px'
+    });
+    window.p = 1;
+    localStorage.setItem('mado', window.p);
+    // localStorage.getItem('coupon');
+    // localStorage.removeItem('coupon');
+    var add = self.setInterval(function() {
+        window.p++;
+        $('.mask').text(p * 20 + '%');
+        if (window.p == 5) {
+            clearInterval(add);
+            $('.mask').fadeOut(500);
+        }
+    }, 300)
+    window.i = 0;
+    myScroll = new IScroll('#wrapper', {
+        // probeType: 3,
+        scrollX: true,
+        scrollY: false,
+        momentum: false,
+        snap: true,
+        click: true,
+        snapSpeed: 800,
+        keyBindings: true
+    });
+    myScroll.on('scrollEnd', function(e) {
+        var w = 0.5 * $(window).width();
+        // console.log(this.x);
+        var l = Math.abs(this.x);
+        var w = parseInt(w);
+        var r = Math.abs(0.5);
+        var p = parseInt(50);
+        // console.log(w-50);
+        // console.log(w + 50);
+        if (this.x == 0) {
+            console.log(1);
+            var i = 1;
+        } else if ((w - 50) < l && l < (w + 50)) {
+            console.log(2);
+            var i = 2;
+        }
+        if ((2 * w - 50) < l && l < (2 * w + 50)) {
+            console.log(3);
+            var i = 3;
+        }
+        if ((3 * w - 50) < l && l < (3 * w + 50)) {
+            console.log(4);
+            var i = 4;
+        }
+        if ((4 * w - 50) < l && l < (4 * w + 50)) {
+            console.log(5);
+            var i = 5;
+        }
+        localStorage.setItem('mado', i);
+        console.log('local' + localStorage.getItem('mado'))
+        $('.painting').css({
+            'width': '80%',
+            'position': 'block',
+            'bottom': '0px'
+        });
+        $('.painting').eq(i - 1).css({
+            'width': '100%',
+            'position': 'relative',
+            'bottom': '20px'
+        });
+    });
+    // myScroll.on('scroll', function(e) {
+    //     var w = 0.5 * $(window).width();
+    //     console.log(this.x);
+    //     var l = Math.abs(this.x);
+    //     var w = parseInt(w);
+    //     var r = Math.abs(0.5);
+    //     var p = parseInt(50);
+    // });
+    $('.btn').click(function() {
+        window.location.replace('choose.html')
+    })
+});
+</script>
+
+</html>

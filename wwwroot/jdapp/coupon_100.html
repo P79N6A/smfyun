@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>京东内衣节</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset='utf8'>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<script src="plugin/jquery.min.js"></script>
+<style type="text/css">
+body {
+    background-image: url('img/bg.jpg');
+    margin: 0px;
+    font-size: 70%;
+}
+
+.rule {
+    color: black;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 3%;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.close {
+    width: 7%;
+    position: absolute;
+    top: 3%;
+    left: 88%;
+}
+
+.login {
+    width: 80%;
+    margin-left: 10%;
+    background: white;
+    text-align: center;
+    border: 2px solid #e774a1;
+    padding: 30px 0px;
+    border-radius: 20px;
+    margin-top: 30%;
+    color: #6d6c6c;
+}
+
+.login div {
+    font-size: 1.5em;
+    margin: 20px 0px 20px 0px;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn img {
+    width: 40%;
+    margin: 0px 2%;
+}
+
+.float {
+    width: 100%;
+    text-align: center;
+}
+
+.share {
+    border-bottom: 1px solid #1b1b1b;
+    color: #6d6c6c;
+    font-size: 0.5em;
+}
+
+.rules {
+    background-image: url('img/bg.jpg');
+    position: absolute;
+    display: none;
+    z-index: 2
+}
+
+.rules img {
+    margin-top: 30%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.rclose {
+    display: inline-block;
+    width: 11%;
+    height: 7%;
+    position: absolute;
+    left: 84%;
+    top: 18%;
+}
+</style>
+
+<body>
+    <div class='rules'>
+        <span class='rclose'></span>
+        <img src="img/guize.png">
+    </div>
+    <span class='rule'>活动规则</span>
+    <!-- <img class='close' src="img/close.png"> -->
+    <div class='login'>
+        <div>你穿衣搭配的眼光真是天下无双
+            <br> 送你一张优惠券
+            <br> 快去京东内衣节挑选看看吧
+        </div>
+        <img src="img/coupon_100.png" style="width:50%;">
+        <div class='btn'>
+            <img class='again' src="img/again.png">
+            <img class='goto' src="img/goto.png">
+        </div>
+        <div class='float' style="margin-bottom:0px;">
+            <span class='share'>分享给好友</span>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="plugin/jdShare.js"></script>
+<script type="text/javascript">
+$('.again').click(function(){
+    window.location.replace('index.html');
+})
+$('.goto').click(function(){
+    window.location.replace('https://pro.m.jd.com/mall/active/3edgRVUf9EaomKEtq5x7WW1SYbRg/index.html');
+})
+$(document).ready(function() {
+    sw = localStorage.getItem('sw');
+    if(!sw){
+        window.location.replace('index.html');
+    }
+    var g_sUA = navigator.userAgent.toLowerCase();
+    console.log(g_sUA);
+    var jdApp = g_sUA.indexOf('jdapp');
+    if (jdApp != -1) {
+
+    } else {
+        $('.share').css({
+            'display': 'none'
+        });
+    }
+});
+$('.rules').width($(window).width());
+$('.rules').height($(window).height());
+$('.rule').click(function() {
+    $('.rules').fadeIn(500);
+});
+$('.rclose').click(function() {
+    $('.rules').fadeOut(500);
+});
+$('.share').click(function() {
+    jdShare.setShareInfo({
+        title: '京东超市，天天低价抢购!',
+        content: '每日京喜好货，都在京东超市天天抢购!早市、午市、晚市，三个时段， 不让品质低价偷偷溜走!',
+        url: 'https://h5.m.jd.com/dev/3DAhHafNYuCBBrJfRmhZUnmJFumv/index.html',
+        img: 'http://m.360buyimg.com/n1/s120x120_jfs/t2566/341/1119128176/23675 / 6356333 b / 568e3 d86Naa36a750.jpg ',
+        channel: 'Wxfriends,Wxmoments',
+        callback: null, // 不要依赖回调，不要在回调中加入业务逻辑，不要 在回调中处理耗时的操作,
+        clickcallback: null, // 5.2新增 分享面板中点击分享渠道成功后回调 注意 sendDirectShare 不支持这个回调方法
+        qrparam: null, // 具体配置详见 5.2新增 二维码分享
+        timeline_title: '' // 5.4新增 朋友圈字段
+    });
+
+    jdShare.callSharePane({
+        title: '京东超市，天天低价抢购!',
+        content: '每日京喜好货，都在京东超市天天抢购!早市、午市、晚市，三 个时段，不让品质低价偷偷溜走!',
+        url: 'https://h5.m.jd.com/dev/3DAhHafNYuCBBrJfRmhZUnmJFumv/index.html',
+        img: 'http://m.360buyimg.com/n1/s120x120_jfs/t2566/341/1119128176/23675 / 6356333 b / 568e3 d86Naa36a750.jpg ',
+        channel: 'Wxfriends,Wxmoments',
+        callback: null, // 不要依赖回调，不要在回调中加入业务逻辑，不要 在回调中处理耗时的操作
+        clickcallback: null, // 5.2新增 分享面板中点击分享渠道成功后回调 注意 sendDirectShare 不支持这个回调方法
+        qrparam: null, // 具体配置详见 5.2新增 二维码分享
+        timeline_title: '' // 5.4新增 朋友圈字段
+    });
+})
+</script>
+
+</html>

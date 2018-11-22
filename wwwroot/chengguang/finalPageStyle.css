@@ -1,0 +1,67 @@
+body {
+	position: relative;
+	overflow: hidden;
+	background-image: url(img/ending/ending.png);
+	background-color: blue;
+	background-size: cover;
+}
+
+#airShip {
+	padding-top: 217px;
+	padding-left: 259px;
+	background-color: transparent;
+	position: absolute;
+}
+
+#leftCloud {
+	padding-top: 255px;
+	padding-left: 8px;
+	background-color: transparent;
+	opacity: 1;
+	position: absolute;
+}
+
+#middleCloud {
+	padding-top: 245px;
+	padding-left: 211px;
+	background-color: transparent;
+	opacity: 1;
+	position: absolute;
+}
+
+.floating1 {
+	background: transparent;
+	position: relative;
+	animation: ghostUpdown 1.5s infinite alternate;
+	-webkit-animation: ghostUpdown 1.5s infinite alternate;
+}
+.floating2{
+	background: transparent;
+	position: relative;
+	animation: ghostUpdown 1.3s infinite alternate;
+	-webkit-animation: ghostUpdown 1.3s infinite alternate;
+}
+.floating3{
+	background: transparent;
+	position: relative;
+	animation: ghostUpdown 1.1s infinite alternate;
+	-webkit-animation: ghostUpdown 1.1s infinite alternate;
+}
+
+@keyframes ghostUpdown {
+	from {
+		margin-top: 100px;
+	}
+	to {
+		margin-top: 70px;
+	}
+}
+
+@-webkit-keyframes ghostUpdown {
+	from {
+		margin-top: 100px;
+	}
+	to {
+		margin-top: 70px;
+	}
+}
